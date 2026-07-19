@@ -183,7 +183,7 @@ span.logo-name {
 
 .hero-image {
   display: flex;
-  justify-content: center;
+  justify-content: right;
 }
 
 .image-placeholder {

@@ -2,10 +2,20 @@ import CalendarIcon from '../assets/icons/chart_24px.svg';
 import GroupsIcon from '../assets/icons/groups_24px.svg';
 import RocketIcon from '../assets/icons/rocket_24px.svg';
 import PersonIcon from '../assets/icons/person.svg';
+import HeroImg from '../assets/hero.png'
+import BgImg from '../assets/pp_bg.jpg'
 
 function Hero() {
   return (
-    <section className="hero">
+    <section 
+      className="hero" 
+      style={{ 
+        backgroundImage: `linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.8)), url(${BgImg})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'right',
+        backgroundAttachment: 'fixed'
+      }}
+    >
       <div className="hero-container">
         <div className="hero-content">
           <h1 className="hero-title">
@@ -50,7 +60,16 @@ function Hero() {
         </div>
         <div className="hero-image">
           <div className="image-placeholder">
-            <PersonIcon style={{ width: '80px', height: '80px' }} />
+            <img 
+              src={HeroImg} 
+              alt="Ari R Fikri" 
+              style={{ 
+                width: '100%', 
+                height: '100%', 
+                objectFit: 'cover', 
+                borderRadius: '24px' 
+              }} 
+            />
           </div>
         </div>
       </div>
