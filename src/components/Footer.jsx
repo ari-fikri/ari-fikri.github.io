@@ -1,7 +1,7 @@
-import { ReactComponent as PersonIcon } from '../assets/icons/person.svg';
-import { ReactComponent as MailIcon } from '../assets/icons/mail.svg';
-import { ReactComponent as VerifiedIcon } from '../assets/icons/verified.svg';
-import { ReactComponent as WhatsAppIcon }  from '../assets/icons/wa_white.svg';
+import PersonIcon from '../assets/icons/person.svg';
+import MailIcon from '../assets/icons/mail.svg';
+import VerifiedIcon from '../assets/icons/verified.svg';
+import WhatsAppIcon from '../assets/icons/wa_white.svg';
 
 function Footer() {
   const phoneNumber = '6289656666148';

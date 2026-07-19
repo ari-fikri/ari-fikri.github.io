@@ -1,11 +1,11 @@
-import { ReactComponent as BusinessCenterIcon } from '../assets/icons/business_center.svg';
-import { ReactComponent as TmminIcon } from '../assets/icons/tmmin.svg';
-import { ReactComponent as UgmIcon } from '../assets/icons/ugm.svg';
-import { ReactComponent as EvermosIcon } from '../assets/icons/evermos.svg';
-import { ReactComponent as OvoIcon } from '../assets/icons/ovo.svg';
-import { ReactComponent as RF123Icon } from '../assets/icons/123rf.svg';
-import { ReactComponent as BizzyIcon } from '../assets/icons/bizzy.svg';
-import { ReactComponent as WgsIcon } from '../assets/icons/wgs.svg';
+import BusinessCenterIcon from '../assets/icons/business_center.svg';
+import TmminIcon from '../assets/icons/tmmin.svg';
+import UgmIcon from '../assets/icons/ugm.svg';
+import EvermosIcon from '../assets/icons/evermos.svg';
+import OvoIcon from '../assets/icons/ovo.svg';
+import RF123Icon from '../assets/icons/123rf.svg';
+import BizzyIcon from '../assets/icons/bizzy.svg';
+import WgsIcon from '../assets/icons/wgs.svg';
 
 function Experience() {
   return (

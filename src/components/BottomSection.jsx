@@ -1,10 +1,10 @@
-import { ReactComponent as TrophyIcon } from '../assets/icons/trophy.svg';
-import { ReactComponent as VerifiedIcon } from '../assets/icons/verified.svg';
-import { ReactComponent as CodeIcon } from '../assets/icons/code.svg';
-import { ReactComponent as GoogleIcon } from '../assets/icons/google.svg';
-import { ReactComponent as PendoIcon } from '../assets/icons/pendo.svg';
-import { ReactComponent as SimplilearnIcon } from '../assets/icons/simplilearn.svg';
-import { ReactComponent as ScrumstudyIcon } from '../assets/icons/scrumstudy.svg';
+import TrophyIcon from '../assets/icons/trophy.svg';
+import VerifiedIcon from '../assets/icons/verified.svg';
+import CodeIcon from '../assets/icons/code.svg';
+import GoogleIcon from '../assets/icons/google.svg';
+import PendoIcon from '../assets/icons/pendo.svg';
+import SimplilearnIcon from '../assets/icons/simplilearn.svg';
+import ScrumstudyIcon from '../assets/icons/scrumstudy.svg';
 
 function BottomSection() {
   return (
@@ -96,7 +96,9 @@ function BottomSection() {
           <div className="bottom-card tools">
             <h2 className="bottom-title">
               <span className="title-icon">
-                <CodeIcon style={{ width: '28px', height: '28px' }} />
+                <span className="title-icon">
+                  <CodeIcon style={{ width: '28px', height: '28px' }} />
+                </span>
               </span>
               Tools & Technologies
             </h2>

@@ -1,13 +1,13 @@
-import { ReactComponent as RocketIcon } from '../assets/icons/rocket_24px.svg';
-import { ReactComponent as CycleIcon } from '../assets/icons/cycle_24px.svg';
-import { ReactComponent as DeployedIcon } from '../assets/icons/deployed_24px.svg';
-import { ReactComponent as ChartIcon } from '../assets/icons/chart_24px.svg';
-import { ReactComponent as GroupsIcon } from '../assets/icons/groups_24px.svg';
-import { ReactComponent as PersonIcon } from '../assets/icons/person.svg';
-import { ReactComponent as LocationIcon } from '../assets/icons/location.svg';
-import { ReactComponent as MailIcon } from '../assets/icons/mail.svg';
-import { ReactComponent as StarIcon } from '../assets/icons/star.svg';
-import { ReactComponent as LinkedinIcon } from '../assets/icons/linkedin.svg';
+import RocketIcon from '../assets/icons/rocket_24px.svg';
+import CycleIcon from '../assets/icons/cycle_24px.svg';
+import DeployedIcon from '../assets/icons/deployed_24px.svg';
+import ChartIcon from '../assets/icons/chart_24px.svg';
+import GroupsIcon from '../assets/icons/groups_24px.svg';
+import PersonIcon from '../assets/icons/person.svg';
+import LocationIcon from '../assets/icons/location.svg';
+import MailIcon from '../assets/icons/mail.svg';
+import StarIcon from '../assets/icons/star.svg';
+import LinkedinIcon from '../assets/icons/linkedin.svg';
 
 function About() {
   return (

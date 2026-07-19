@@ -1,7 +1,7 @@
-import { ReactComponent as CalendarIcon } from '../assets/icons/chart_24px.svg';
-import { ReactComponent as GroupsIcon } from '../assets/icons/groups_24px.svg';
-import { ReactComponent as RocketIcon } from '../assets/icons/rocket_24px.svg';
-import { ReactComponent as PersonIcon } from '../assets/icons/person.svg';
+import CalendarIcon from '../assets/icons/chart_24px.svg';
+import GroupsIcon from '../assets/icons/groups_24px.svg';
+import RocketIcon from '../assets/icons/rocket_24px.svg';
+import PersonIcon from '../assets/icons/person.svg';
 
 function Hero() {
   return (
