@@ -203,9 +203,36 @@ span.logo-name {
   opacity: 0.8;
 }
 
+.expertise-anchor {
+  scroll-margin-top: 100px;
+}
+
+#expertise {
+  scroll-margin-top: 100px;
+}
+
+#certifications {
+  scroll-margin-top: 80px;
+}
+
+@media (max-width: 768px) {
+  .expertise-anchor {
+    scroll-margin-top: 180px;
+  }
+
+  #expertise {
+    scroll-margin-top: 200px;
+  }
+  
+  #certifications {
+    scroll-margin-top: 150px;
+  }
+}
+
 /* Sections */
 .section {
   padding: 4rem 2rem;
+  scroll-margin-top: 80px; /* Offset for desktop sticky navbar */
 }
 
 .section-container {
@@ -739,6 +766,7 @@ p.company-name {
 
   .section {
     padding: 3rem 1.25rem;
+    scroll-margin-top: 150px; /* Larger offset for stacked mobile navbar */
   }
 
   .experience-timeline::before {

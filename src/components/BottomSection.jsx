@@ -8,24 +8,9 @@ import ScrumstudyIcon from '../assets/icons/scrumstudy.svg';
 
 function BottomSection() {
   return (
-    <section className="section bottom-section">
+    <section id="certifications" className="section bottom-section">
       <div className="section-container">
         <div className="bottom-grid">
-          <div className="bottom-card achievements">
-            <h2 className="bottom-title">
-              <span className="title-icon">
-                <TrophyIcon style={{ width: '28px', height: '28px' }} />
-              </span>
-              Key Achievements
-            </h2>
-            <ul className="achievements-list">
-              <li className="achievement-item">Resolved critical issues affecting 2-3 million OVO users.</li>
-              <li className="achievement-item">Led Toyota's digital initiatives saving IDR 8 Billion annually.</li>
-              <li className="achievement-item">Delivered 50+ projects across web, mobile, and enterprise platforms.</li>
-              <li className="achievement-item">Improved team satisfaction to 85% and retention by 12%.</li>
-              <li className="achievement-item">Built and mentored high-performing agile teams.</li>
-            </ul>
-          </div>
           <div className="bottom-card certifications">
             <h2 className="bottom-title">
               <span className="title-icon">
@@ -58,41 +43,56 @@ function BottomSection() {
               </div>
 
               {/* Product Management Basics Certification */}
-              <section id="certifications" >
-                <div className="cert-item">
-                  <div className="cert-logo">
-                    <PendoIcon style={{ width: '48px', height: '48px' }} />
-                  </div>
-                  <div className="cert-info">
-                    <h4 className="cert-name">Product Management Basics Certification</h4>
-                    <p className="cert-details">Pendo</p>
-                  </div>
+              <div className="cert-item">
+                <div className="cert-logo">
+                  <PendoIcon style={{ width: '48px', height: '48px' }} />
                 </div>
+                <div className="cert-info">
+                  <h4 className="cert-name">Product Management Basics Certification</h4>
+                  <p className="cert-details">Pendo</p>
+                </div>
+              </div>
 
-                {/* Agile Scrum Master */}
-                <div className="cert-item">
-                  <div className="cert-logo">
-                    <SimplilearnIcon style={{ width: '48px', height: '48px' }} />
-                  </div>
-                  <div className="cert-info">
-                    <h4 className="cert-name">Agile Scrum Master</h4>
-                    <p className="cert-details">Simplilearn</p>
-                  </div>
+              {/* Agile Scrum Master */}
+              <div className="cert-item">
+                <div className="cert-logo">
+                  <SimplilearnIcon style={{ width: '48px', height: '48px' }} />
                 </div>
+                <div className="cert-info">
+                  <h4 className="cert-name">Agile Scrum Master</h4>
+                  <p className="cert-details">Simplilearn</p>
+                </div>
+              </div>
 
-                <div className="view-more-certs">
-                  <a 
-                    href="https://www.linkedin.com/in/ari-fikri/details/certifications/" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="view-more-link"
-                  >
-                    View Full Certifications →
-                  </a>
-                </div>
-              </section>
+              <div className="view-more-certs">
+                <a 
+                  href="https://www.linkedin.com/in/ari-fikri/details/certifications/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="view-more-link"
+                >
+                  View Full Certifications →
+                </a>
+              </div>
             </div>
           </div>
+
+          <div className="bottom-card achievements">
+            <h2 className="bottom-title">
+              <span className="title-icon">
+                <TrophyIcon style={{ width: '28px', height: '28px' }} />
+              </span>
+              Key Achievements
+            </h2>
+            <ul className="achievements-list">
+              <li className="achievement-item">Resolved critical issues affecting 2-3 million OVO users.</li>
+              <li className="achievement-item">Led Toyota's digital initiatives saving IDR 8 Billion annually.</li>
+              <li className="achievement-item">Delivered 50+ projects across web, mobile, and enterprise platforms.</li>
+              <li className="achievement-item">Improved team satisfaction to 85% and retention by 12%.</li>
+              <li className="achievement-item">Built and mentored high-performing agile teams.</li>
+            </ul>
+          </div>
+
           <div className="bottom-card tools">
             <h2 className="bottom-title">
               <span className="title-icon">

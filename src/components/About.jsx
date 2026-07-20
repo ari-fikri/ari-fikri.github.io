@@ -49,7 +49,7 @@ function About() {
               </div>
             </div>
           </div>
-          <section id="expertise">
+          <div id="expertise" className="expertise-anchor">
              <div className="skills-content">
               <h2 className="section-title">
                 <span className="title-icon">
@@ -85,7 +85,7 @@ function About() {
                 </div>
               </div>
             </div>
-          </section>
+          </div>
         </div>
       </div>
     </section>
