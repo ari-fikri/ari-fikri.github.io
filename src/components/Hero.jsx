@@ -24,7 +24,7 @@ function Hero() {
           </h1>
           <p className="hero-description">
             I bridge business goals with technology execution to deliver impactful solutions 
-            at scale. 20+ years of experience leading cross-functional teams, driving agile 
+            at scale. 15+ years of experience leading cross-functional teams, driving agile 
             delivery, and transforming organizations.
           </p>
           <div className="hero-stats">
