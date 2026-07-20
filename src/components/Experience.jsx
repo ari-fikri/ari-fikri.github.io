@@ -170,7 +170,15 @@ function Experience() {
         <div className="view-more-container">
           <button 
             className="view-more-btn" 
-            onClick={() => window.open('https://www.linkedin.com/in/ari-fikri/details/experience/', '_blank')}
+            onClick={() => {
+              if (window.gtag) {
+                window.gtag('event', 'view_full_experience', {
+                  'event_category': 'Engagement',
+                  'event_label': 'Experience Section'
+                });
+              }
+              window.open('https://www.linkedin.com/in/ari-fikri/details/experience/', '_blank');
+            }}
           >
             View Full Experience
           </button>

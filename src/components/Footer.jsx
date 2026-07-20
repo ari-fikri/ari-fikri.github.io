@@ -10,6 +10,25 @@ function Footer() {
     return `https://wa.me/${phoneNumber}?text=${message}`;
   };
 
+  const handleWhatsAppClick = () => {
+    if (window.gtag) {
+      window.gtag('event', 'contact_whatsapp', {
+        'event_category': 'Engagement',
+        'event_label': 'Footer WhatsApp Button'
+      });
+    }
+    window.open(createWhatsAppUrl(), '_blank');
+  };
+
+  const handleSocialClick = (platform) => {
+    if (window.gtag) {
+      window.gtag('event', 'social_click', {
+        'event_category': 'Engagement',
+        'event_label': platform
+      });
+    }
+  };
+
   return (
     <footer id="contact" className="footer">
       <div className="footer-container">
@@ -32,16 +51,16 @@ function Footer() {
               <span className="contact-icon">
                 <MailIcon style={{ width: '24px', height: '24px' }} />
               </span>
-              <span className="contact-text"><a href="mailto:arirushan79@gmail.com">arirushan79@gmail.com</a></span>
+              <span className="contact-text"><a href="mailto:arirushan79@gmail.com" onClick={() => handleSocialClick('Email')}>arirushan79@gmail.com</a></span>
             </div>
             <div className="contact-item">
               <span className="contact-icon">
                 <VerifiedIcon style={{ width: '24px', height: '24px' }} />
               </span>
-              <span className="contact-text"><a href="https://www.linkedin.com/in/ari-fikri">linkedin.com/in/ari-fikri</a></span>
+              <span className="contact-text"><a href="https://www.linkedin.com/in/ari-fikri" target="_blank" rel="noopener noreferrer" onClick={() => handleSocialClick('LinkedIn')}>linkedin.com/in/ari-fikri</a></span>
             </div>
             
-            <button className="contact-btn" onClick={() => window.open(createWhatsAppUrl(), '_blank')}>
+            <button className="contact-btn" onClick={handleWhatsAppClick}>
               <WhatsAppIcon style={{ width: '35px', height: '35px' }} />
               WhatsApp Me
             </button>

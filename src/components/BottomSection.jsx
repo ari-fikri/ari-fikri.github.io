@@ -70,6 +70,14 @@ function BottomSection() {
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="view-more-link"
+                  onClick={() => {
+                    if (window.gtag) {
+                      window.gtag('event', 'view_full_certifications', {
+                        'event_category': 'Engagement',
+                        'event_label': 'Certifications Section'
+                      });
+                    }
+                  }}
                 >
                   View Full Certifications →
                 </a>

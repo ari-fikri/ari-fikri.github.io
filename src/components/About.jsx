@@ -11,6 +11,15 @@ import LinkedinIcon from '../assets/icons/linkedin.svg';
 import GithubIcon from '../assets/icons/gh_logo.svg';
 
 function About() {
+  const handleSocialClick = (platform) => {
+    if (window.gtag) {
+      window.gtag('event', 'social_click', {
+        'event_category': 'Engagement',
+        'event_label': platform
+      });
+    }
+  };
+
   return (
     <section id="about" className="section">
       <div className="section-container">
@@ -40,19 +49,19 @@ function About() {
                 <span className="detail-icon">
                   <MailIcon style={{ width: '20px', height: '20px' }} />
                 </span>
-                <span className="detail-text">arirushan79@gmail.com</span>
+                <span className="detail-text"><a href="mailto:arirushan79@gmail.com" onClick={() => handleSocialClick('Email')}>arirushan79@gmail.com</a></span>
               </div>
               <div className="detail-item">
                 <span className="detail-icon">
                   <LinkedinIcon style={{ width: '20px', height: '20px' }} />
                 </span>
-                <span className="detail-text"><a href="https://www.linkedin.com/in/ari-fikri">linkedin.com/in/ari-fikri</a></span>
+                <span className="detail-text"><a href="https://www.linkedin.com/in/ari-fikri" target="_blank" rel="noopener noreferrer" onClick={() => handleSocialClick('LinkedIn')}>linkedin.com/in/ari-fikri</a></span>
               </div>
               <div className="detail-item">
                 <span className="detail-icon">
                   <GithubIcon style={{ width: '20px', height: '20px' }} />
                 </span>
-                <span className="detail-text"><a href="https://www.github.com/ari-fikri">github.com/ari-fikri/</a></span>
+                <span className="detail-text"><a href="https://www.github.com/ari-fikri" target="_blank" rel="noopener noreferrer" onClick={() => handleSocialClick('GitHub')}>github.com/ari-fikri/</a></span>
               </div>
             </div>
           </div>
