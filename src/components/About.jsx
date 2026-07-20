@@ -8,6 +8,7 @@ import LocationIcon from '../assets/icons/location.svg';
 import MailIcon from '../assets/icons/mail.svg';
 import StarIcon from '../assets/icons/star.svg';
 import LinkedinIcon from '../assets/icons/linkedin.svg';
+import GithubIcon from '../assets/icons/gh_logo.svg';
 
 function About() {
   return (
@@ -46,6 +47,12 @@ function About() {
                   <LinkedinIcon style={{ width: '20px', height: '20px' }} />
                 </span>
                 <span className="detail-text"><a href="https://www.linkedin.com/in/ari-fikri">linkedin.com/in/ari-fikri</a></span>
+              </div>
+              <div className="detail-item">
+                <span className="detail-icon">
+                  <GithubIcon style={{ width: '20px', height: '20px' }} />
+                </span>
+                <span className="detail-text"><a href="https://www.github.com/ari-fikri">github.com/ari-fikri/</a></span>
               </div>
             </div>
           </div>
