@@ -32,7 +32,7 @@ function Hero() {
               <div className="stat-icon">
                 <CalendarIcon style={{ width: '28px', height: '28px' }} />
               </div>
-              <div className="stat-value">20+</div>
+              <div className="stat-value">15+</div>
               <div className="stat-label">Years Experience</div>
             </div>
             <div className="stat-item">
