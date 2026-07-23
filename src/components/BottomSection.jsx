@@ -21,7 +21,20 @@ function BottomSection() {
             <div className="certifications-list">
               
               {/* Google Project Management Professional */}
-              <div className="cert-item">
+              <a 
+                href="https://www.credly.com/badges/df5ec6c4-89eb-4824-9b8d-0c549efff1d9" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="cert-item"
+                onClick={() => {
+                  if (window.gtag) {
+                    window.gtag('event', 'cert_click', {
+                      'event_category': 'Engagement',
+                      'event_label': 'Google Project Management Professional'
+                    });
+                  }
+                }}
+              >
                 <div className="cert-logo">
                   <GoogleIcon style={{ width: '48px', height: '48px' }} />
                 </div>
@@ -29,10 +42,23 @@ function BottomSection() {
                   <h4 className="cert-name">Google Project Management Professional</h4>
                   <p className="cert-details">Google - Professional Certificate I • 2024</p>
                 </div>
-              </div>
+              </a>
 
               {/* Scrum Fundamental Certified */}
-              <div className="cert-item">
+              <a 
+                href="https://c46e136a583f7e334124-ac22991740ab4ff17e21daf2ed577041.ssl.cf1.rackcdn.com/Certificate/ScrumFundamentalsCertified-AriFikri-1145753.pdf" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="cert-item"
+                onClick={() => {
+                  if (window.gtag) {
+                    window.gtag('event', 'cert_click', {
+                      'event_category': 'Engagement',
+                      'event_label': 'Scrum Fundamentals Certified (SFC)'
+                    });
+                  }
+                }}
+              >
                 <div className="cert-logo">
                   <ScrumstudyIcon style={{ width: '48px', height: '48px' }} />
                 </div>
@@ -40,10 +66,23 @@ function BottomSection() {
                   <h4 className="cert-name">Scrum Fundamentals Certified (SFC)</h4>
                   <p className="cert-details">Scrum Study Italia</p>
                 </div>
-              </div>
+              </a>
 
               {/* Product Management Basics Certification */}
-              <div className="cert-item">
+              <a 
+                href="https://www.credly.com/badges/759eea80-2e32-42f4-b5c8-97a2f60b176d" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="cert-item"
+                onClick={() => {
+                  if (window.gtag) {
+                    window.gtag('event', 'cert_click', {
+                      'event_category': 'Engagement',
+                      'event_label': 'Product Management Basics Certification'
+                    });
+                  }
+                }}
+              >
                 <div className="cert-logo">
                   <PendoIcon style={{ width: '48px', height: '48px' }} />
                 </div>
@@ -51,10 +90,23 @@ function BottomSection() {
                   <h4 className="cert-name">Product Management Basics Certification</h4>
                   <p className="cert-details">Pendo</p>
                 </div>
-              </div>
+              </a>
 
               {/* Agile Scrum Master */}
-              <div className="cert-item">
+              <a 
+                href="https://www.simplilearn.com/skillup-certificate-landing?token=eyJjb3Vyc2VfaWQiOiI0NDgzIiwiY2VydGlmaWNhdGVfdXJsIjoiaHR0cHM6XC9cL2NlcnRpZmljYXRlcy5zaW1wbGljZG4ubmV0XC9zaGFyZVwvNzc3MDM5NV83OTg0MTIzMTczNjc3NTM3NzMyNC5wbmciLCJ1c2VybmFtZSI6IkFyaSBSLiBGaWtyaSJ9&utm_source=shared-certificate&utm_medium=lms&utm_campaign=shared-certificate-promotion&referrer=https%3A%2F%2Flms.simplilearn.com%2Fcourses%2F7411%2FAgile-Scrum-Master_SkillUp%2Fcertificate%2Fdownload-skillup&%24web_only=true&_branch_match_id=1466023715317668431&_branch_referrer=H4sIAAAAAAAAA8soKSkottLXL87MLcjJ1EssKNDLyczL1k%2FV97X08DdP8%2FY3D0iyrytKTUstKsrMS49PKsovL04tsvUBqkpN8cwDACPJpGVBAAAA" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="cert-item"
+                onClick={() => {
+                  if (window.gtag) {
+                    window.gtag('event', 'cert_click', {
+                      'event_category': 'Engagement',
+                      'event_label': 'Agile Scrum Master'
+                    });
+                  }
+                }}
+              >
                 <div className="cert-logo">
                   <SimplilearnIcon style={{ width: '48px', height: '48px' }} />
                 </div>
@@ -62,7 +114,7 @@ function BottomSection() {
                   <h4 className="cert-name">Agile Scrum Master</h4>
                   <p className="cert-details">Simplilearn</p>
                 </div>
-              </div>
+              </a>
 
               <div className="view-more-certs">
                 <a 
@@ -111,14 +163,15 @@ function BottomSection() {
               Tools & Technologies
             </h2>
             <div className="tools-grid">
+              <span className="tool-tag">n8n</span>
               <span className="tool-tag">JIRA</span>
               <span className="tool-tag">Confluence</span>
               <span className="tool-tag">Figma</span>
               <span className="tool-tag">Docker</span>
-              <span className="tool-tag">AWS (Basic)</span>
+              <span className="tool-tag">AWS</span>
               <span className="tool-tag">Postman</span>
               <span className="tool-tag">SQL</span>
-              <span className="tool-tag">Python (Basic)</span>
+              <span className="tool-tag">Python</span>
               <span className="tool-tag">GoLang</span>
               <span className="tool-tag">PHP</span>
               <span className="tool-tag">JavaScript</span>
