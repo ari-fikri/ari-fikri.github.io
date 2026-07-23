@@ -1,5 +1,3 @@
-import cvPdf from '../assets/CV Ari R Fikri - Project Manager.pdf';
-
 function Navbar() {
   const handleDownload = () => {
     // GA Event: Download CV
@@ -11,8 +9,8 @@ function Navbar() {
     }
 
     const link = document.createElement('a');
-    link.href = cvPdf;
-    link.download = 'CV Ari R Fikri - Project Manager.pdf';
+    link.href = '/cv_ari_fikri_project_mgr.pdf';
+    link.download = 'cv_ari_fikri_project_mgr.pdf';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
