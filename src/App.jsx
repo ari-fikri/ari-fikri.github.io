@@ -1,11 +1,11 @@
 
 import { useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import About from './components/About';
-import Experience from './components/Experience';
-import BottomSection from './components/BottomSection';
+import Home from './components/Home';
+import Blog from './components/Blog';
+import PostDetail from './components/PostDetail';
 import Footer from './components/Footer';
 
 function App() {
@@ -46,25 +46,21 @@ function App() {
   }, []);
 
   return (
-    <div className="portfolio-container">
-      {/* Navigation */}
-      <Navbar />
+    <Router>
+      <div className="portfolio-container">
+        {/* Navigation */}
+        <Navbar />
 
-      {/* Hero Section */}
-      <Hero />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:slug" element={<PostDetail />} />
+        </Routes>
 
-      {/* About Section */}
-      <About />
-
-      {/* Experience Section */}
-      <Experience />
-
-      {/* Bottom Section - Achievements, Certifications, Tools */}
-      <BottomSection />
-
-      {/* Footer / Contact */}
-      <Footer />
-    </div>
+        {/* Footer / Contact */}
+        <Footer />
+      </div>
+    </Router>
   );
 }
 

@@ -343,6 +343,92 @@ h2.section-title {
   margin-top: auto; /* Align to bottom */
 }
 
+/* Blog Styles */
+.blog-container, .post-detail-container {
+  padding: 100px 20px 60px;
+  max-width: 1000px;
+  margin: 0 auto;
+  min-height: 80vh;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: var(--text-primary);
+  text-align: center;
+}
+
+.posts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.post-card {
+  background: #1e293b;
+  padding: 30px;
+  border-radius: 12px;
+  border: 1px solid #334155;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.post-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--primary-color);
+}
+
+.post-title {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: var(--text-primary);
+}
+
+.read-more-btn {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 30px;
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.back-link:hover {
+  color: var(--primary-color);
+}
+
+.post-content {
+  line-height: 1.8;
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+}
+
+.post-content h1, .post-content h2, .post-content h3 {
+  color: var(--text-primary);
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+
+.post-content p {
+  margin-bottom: 20px;
+}
+
+.loading, .error {
+  padding: 150px 20px;
+  text-align: center;
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+}
+
 /* Experience Timeline */
 .experience-timeline {
   display: flex;

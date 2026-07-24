@@ -1,4 +1,9 @@
+import { Link, useLocation } from 'react-router-dom';
+
 function Navbar() {
+  const location = useLocation();
+  const isHomePage = location.pathname === '/';
+
   const handleDownload = () => {
     // GA Event: Download CV
     if (window.gtag) {
@@ -28,17 +33,28 @@ function Navbar() {
   return (
     <nav className="navbar">
       <div className="nav-container">
-        <div className="nav-brand">
+        <Link to="/" className="nav-brand" onClick={() => handleNavLinkClick('Home')}>
           <span className="logo-initial">AF</span>
           <span className="logo-name">Ari R. Fikri</span>
-        </div>
+        </Link>
         <div className="nav-links">
-          <a href="#about" className="nav-link" onClick={() => handleNavLinkClick('About')}>About</a>
-          <a href="#expertise" className="nav-link" onClick={() => handleNavLinkClick('Expertise')}>Expertise</a>
-          <a href="#experience" className="nav-link" onClick={() => handleNavLinkClick('Experience')}>Experience</a>
-          <a href="#projects" className="nav-link" onClick={() => handleNavLinkClick('Projects')}>Projects</a>
-          <a href="#certifications" className="nav-link" onClick={() => handleNavLinkClick('Certifications')}>Certifications</a>
-          <a href="#contact" className="nav-link" onClick={() => handleNavLinkClick('Contact')}>Contact</a>
+          {isHomePage ? (
+            <>
+              <a href="#about" className="nav-link" onClick={() => handleNavLinkClick('About')}>About</a>
+              <a href="#expertise" className="nav-link" onClick={() => handleNavLinkClick('Expertise')}>Expertise</a>
+              <a href="#experience" className="nav-link" onClick={() => handleNavLinkClick('Experience')}>Experience</a>
+              <a href="#projects" className="nav-link" onClick={() => handleNavLinkClick('Projects')}>Projects</a>
+              <a href="#certifications" className="nav-link" onClick={() => handleNavLinkClick('Certifications')}>Certifications</a>
+              <a href="#contact" className="nav-link" onClick={() => handleNavLinkClick('Contact')}>Contact</a>
+            </>
+          ) : (
+            <>
+              <Link to="/#about" className="nav-link" onClick={() => handleNavLinkClick('About')}>About</Link>
+              <Link to="/#expertise" className="nav-link" onClick={() => handleNavLinkClick('Expertise')}>Expertise</Link>
+              <Link to="/#experience" className="nav-link" onClick={() => handleNavLinkClick('Experience')}>Experience</Link>
+            </>
+          )}
+          <Link to="/blog" className="nav-link" onClick={() => handleNavLinkClick('Blog')}>Blog</Link>
           <button className="download-btn" onClick={handleDownload}>Download CV</button>
         </div>
       </div>

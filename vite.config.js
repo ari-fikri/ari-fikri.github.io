@@ -10,4 +10,22 @@ export default defineConfig({
       include: "**/*.svg",
     }),
   ],
+  server: {
+    proxy: {
+      '/api': {
+        target: 'http://localhost:4001',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, '/graphql'),
+      },
+      '/admin': {
+        target: 'http://localhost:4001',
+        changeOrigin: true,
+      },
+    },
+  },
+  resolve: {
+    alias: {
+      '@': '/src',
+    },
+  },
 })

@@ -5,16 +5,21 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "tina:dev": "tinacms dev -c \"npm run dev\"",
     "build": "vite build",
+    "tina:build": "tinacms build",
     "lint": "oxlint",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "tina:preview": "tinacms build && vite preview"
   },
   "dependencies": {
     "react": "^19.2.7",
     "react-dom": "^19.2.7",
-    "react-router-dom": "^7.18.1"
+    "react-router-dom": "^7.18.1",
+    "tinacms": "^3.11.0"
   },
   "devDependencies": {
+    "@tinacms/cli": "^2.5.6",
     "@types/react": "^19.2.17",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^6.0.3",
