@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { TinaMarkdown } from 'tinacms/dist/rich-text';
-import client from '../../tina/__generated__/client';
 
 function PostDetail() {
   const { slug } = useParams();
@@ -11,8 +10,6 @@ function PostDetail() {
   useEffect(() => {
     const fetchPost = async () => {
       try {
-        console.log('Fetching post for slug:', slug);
-        
         // Try to fetch via proxy first
         const response = await fetch('/api', {
           method: 'POST',
@@ -36,7 +33,6 @@ function PostDetail() {
 
         if (response.ok) {
           const result = await response.json();
-          console.log('Post data fetched via proxy:', result);
           if (result.data?.post) {
             setPost(result.data.post);
             setLoading(false);
@@ -45,7 +41,6 @@ function PostDetail() {
         }
 
         // Fallback to absolute URL
-        console.log('Proxy failed, trying absolute fallback...');
         const tinaUrl = import.meta.env.VITE_TINA_URL || 'http://localhost:4001/graphql';
         const fallbackResponse = await fetch(tinaUrl, {
           method: 'POST',
@@ -69,7 +64,6 @@ function PostDetail() {
 
         if (fallbackResponse.ok) {
           const fallbackResult = await fallbackResponse.json();
-          console.log('Post data fetched via absolute fallback:', fallbackResult);
 
           if (fallbackResult.data?.post) {
             setPost(fallbackResult.data.post);
@@ -104,7 +98,7 @@ function PostDetail() {
   return (
     <div className="post-detail-container">
       <Link to="/blog" className="back-link">← Back to Blog</Link>
-      <h1 className="post-title">{post.title}</h1>
+      <h1 className="post-title-detail">{post.title}</h1>
       <div className="post-content">
         {post.body ? <TinaMarkdown content={post.body} /> : <p>No content available.</p>}
       </div>

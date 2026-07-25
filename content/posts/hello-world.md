@@ -1,5 +1,7 @@
 ---
-title: Hello, World!
+title: 'Hello, World!'
+heroImage: /two-seats.png
+excerpt: 'Finally I can share my thought with the rest of the world, in my own personal website.'
 ---
 
 ## Hello World!

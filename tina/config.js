@@ -47,6 +47,19 @@ export default defineConfig({
             required: true,
           },
           {
+            type: "image",
+            name: "heroImage",
+            label: "Hero Image",
+          },
+          {
+            type: "string",
+            name: "excerpt",
+            label: "Excerpt",
+            ui: {
+              component: "textarea",
+            },
+          },
+          {
             type: "rich-text",
             name: "body",
             label: "Body",

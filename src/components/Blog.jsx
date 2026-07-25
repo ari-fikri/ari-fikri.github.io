@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import client from '../../tina/__generated__/client';
+import BgImg from '../assets/pp_bg.jpg';
+import AfLogo from '../assets/icons/af.svg';
 
 function Blog() {
   const [posts, setPosts] = useState([]);
@@ -9,7 +10,6 @@ function Blog() {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        console.log('Fetching posts via proxy...');
         // Try to fetch via proxy first
         const response = await fetch('/api', {
           method: 'POST',
@@ -24,6 +24,8 @@ function Blog() {
                     node {
                       id
                       title
+                      heroImage
+                      excerpt
                       _sys {
                         filename
                       }
@@ -35,11 +37,8 @@ function Blog() {
           }),
         });
 
-        console.log('Response status:', response.status);
-
         if (response.ok) {
           const result = await response.json();
-          console.log('Posts fetched via proxy:', result);
           if (result.data?.postConnection?.edges) {
             setPosts(result.data.postConnection.edges);
             setLoading(false);
@@ -48,7 +47,6 @@ function Blog() {
         }
         
         // Fallback to absolute URL if proxy fails or returns empty
-        console.log('Proxy failed or returned no data, trying absolute fallback...');
         const tinaUrl = import.meta.env.VITE_TINA_URL || 'http://localhost:4001/graphql';
         const fallbackResponse = await fetch(tinaUrl, {
           method: 'POST',
@@ -63,6 +61,8 @@ function Blog() {
                     node {
                       id
                       title
+                      heroImage
+                      excerpt
                       _sys {
                         filename
                       }
@@ -76,7 +76,6 @@ function Blog() {
 
         if (fallbackResponse.ok) {
           const fallbackResult = await fallbackResponse.json();
-          console.log('Posts fetched via absolute fallback:', fallbackResult);
           if (fallbackResult.data?.postConnection?.edges) {
             setPosts(fallbackResult.data.postConnection.edges);
           }
@@ -98,17 +97,44 @@ function Blog() {
   }
 
   return (
-    <div className="blog-container">
-      <h1 className="section-title">Blog</h1>
-      <div className="posts-grid">
+    <div className="blog-page">
+      <section 
+        className="hero blog-hero" 
+        style={{ 
+          backgroundImage: `linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.8)), url(${BgImg})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'right',
+          backgroundAttachment: 'fixed'
+        }}
+      >
+        <div className="hero-container centered">
+          <h1 className="hero-title">Blog</h1>
+        </div>
+      </section>
+
+      <div className="blog-container posts-grid">
         {posts.map((post) => (
-          <div key={post.node.id} className="post-card">
-            <h2 className="post-title">{post.node.title}</h2>
-            <Link to={`/blog/${post.node._sys.filename}`} className="read-more-btn">
-              Read More
-            </Link>
-          </div>
-        ))}
+            <div key={post.node.id} className="post-card">
+              <div className="post-card-image">
+                {post.node.heroImage ? (
+                  <img src={post.node.heroImage} alt={post.node.title} />
+                ) : (
+                  <div className="post-card-placeholder">
+                    <AfLogo className="placeholder-logo" />
+                  </div>
+                )}
+              </div>
+              <div className="post-card-content">
+                <h2 className="post-title">{post.node.title}</h2>
+                <p className="post-excerpt">
+                  {post.node.excerpt || 'Explore insights, tutorials, and stories about digital transformation and leadership.'}
+                </p>
+              </div>
+              <Link to={`/blog/${post.node._sys.filename}`} className="read-more-btn">
+                Read More →
+              </Link>
+            </div>
+          ))}
       </div>
     </div>
   );
