@@ -10,8 +10,14 @@ function Blog() {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        // Try to fetch via proxy first
-        const response = await fetch('/api', {
+        const isProd = import.meta.env.PROD;
+        const tinaUrl = import.meta.env.VITE_TINA_URL || 'http://localhost:4001/graphql';
+
+        // In production, fetch directly from Tina Cloud URL
+        // In development, try proxy first, then fallback to local URL
+        const fetchUrl = isProd ? tinaUrl : '/api';
+        
+        const response = await fetch(fetchUrl, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -46,41 +52,40 @@ function Blog() {
           }
         }
         
-        // Fallback to absolute URL if proxy fails or returns empty
-        const tinaUrl = import.meta.env.VITE_TINA_URL || 'http://localhost:4001/graphql';
-        const fallbackResponse = await fetch(tinaUrl, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            query: `
-              query {
-                postConnection {
-                  edges {
-                    node {
-                      id
-                      title
-                      heroImage
-                      excerpt
-                      _sys {
-                        filename
+        // Fallback for development if proxy fails
+        if (!isProd) {
+          const fallbackResponse = await fetch(tinaUrl, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              query: `
+                query {
+                  postConnection {
+                    edges {
+                      node {
+                        id
+                        title
+                        heroImage
+                        excerpt
+                        _sys {
+                          filename
+                        }
                       }
                     }
                   }
                 }
-              }
-            `,
-          }),
-        });
+              `,
+            }),
+          });
 
-        if (fallbackResponse.ok) {
-          const fallbackResult = await fallbackResponse.json();
-          if (fallbackResult.data?.postConnection?.edges) {
-            setPosts(fallbackResult.data.postConnection.edges);
+          if (fallbackResponse.ok) {
+            const fallbackResult = await fallbackResponse.json();
+            if (fallbackResult.data?.postConnection?.edges) {
+              setPosts(fallbackResult.data.postConnection.edges);
+            }
           }
-        } else {
-          console.error('Fallback request failed:', fallbackResponse.status);
         }
         setLoading(false);
       } catch (error) {

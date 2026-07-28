@@ -1,11 +1,18 @@
 ---
 title: 'Hello, World!'
-heroImage: /two-seats.png
-excerpt: 'Finally I can share my thought with the rest of the world, in my own personal website.'
+heroImage: ''
+excerpt: 'Finally I am able to use TinaCMS as CMS for my personal Blog. TinaCMS is a headless CMS, so it doesn''t really have a database as all contents are store in Github.'
 ---
 
 ## Hello World!
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut non lorem diam. Quisque vulputate nibh sodales eros pretium tincidunt. Aenean porttitor efficitur convallis. Nulla sagittis finibus convallis. Phasellus in fermentum quam, eu egestas tortor. Maecenas ac mollis leo. Integer maximus eu nisl vel sagittis.
+Finally I am able to use TinaCMS as CMS for my personal Blog. TinaCMS is a headless CMS, so it doesn't really have a database as all contents are store in Github.
 
-Suspendisse facilisis, mi ac scelerisque interdum, ligula ex imperdiet felis, a posuere eros justo nec sem. Nullam laoreet accumsan metus, sit amet tincidunt orci egestas nec. Pellentesque ut aliquet ante, at tristique nunc. Donec non massa nibh. Ut posuere lacus non aliquam laoreet. Fusce pharetra ligula a felis porttitor, at mollis ipsum maximus. Donec quam tortor, vehicula a magna sit amet, tincidunt dictum enim. In hac habitasse platea dictumst. Mauris sit amet ornare ligula, blandit consequat risus. Duis malesuada pellentesque lectus, non feugiat turpis eleifend a. Nullam tempus ante et diam pretium, ac faucibus ligula interdum.
+Was confused to pick between TinaCMS and Decap CMS, but finally picked Tina as my CMS. 
+
+I used headless CMS because my personal sites is stored in Github and it doesn't have any DB to store it contents and I'm kind of a cheap person :) , well money is tight nowadays and in this economy it is better to save as much and spend as little and get it free if possible.
+
+After struggling for quite sometimes but finally able to make it run though.
+
+
+Enough for first post I guess, will try to write another one next time

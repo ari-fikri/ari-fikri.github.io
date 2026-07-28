@@ -10,8 +10,14 @@ function PostDetail() {
   useEffect(() => {
     const fetchPost = async () => {
       try {
-        // Try to fetch via proxy first
-        const response = await fetch('/api', {
+        const isProd = import.meta.env.PROD;
+        const tinaUrl = import.meta.env.VITE_TINA_URL || 'http://localhost:4001/graphql';
+
+        // In production, fetch directly from Tina Cloud URL
+        // In development, try proxy first, then fallback to local URL
+        const fetchUrl = isProd ? tinaUrl : '/api';
+
+        const response = await fetch(fetchUrl, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -40,36 +46,35 @@ function PostDetail() {
           }
         }
 
-        // Fallback to absolute URL
-        const tinaUrl = import.meta.env.VITE_TINA_URL || 'http://localhost:4001/graphql';
-        const fallbackResponse = await fetch(tinaUrl, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            query: `
-              query getPost($relativePath: String!) {
-                post(relativePath: $relativePath) {
-                  title
-                  body
-                }
-              }
-            `,
-            variables: {
-              relativePath: `${slug}.md`,
+        // Fallback for development if proxy fails
+        if (!isProd) {
+          const fallbackResponse = await fetch(tinaUrl, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
             },
-          }),
-        });
+            body: JSON.stringify({
+              query: `
+                query getPost($relativePath: String!) {
+                  post(relativePath: $relativePath) {
+                    title
+                    body
+                  }
+                }
+              `,
+              variables: {
+                relativePath: `${slug}.md`,
+              },
+            }),
+          });
 
-        if (fallbackResponse.ok) {
-          const fallbackResult = await fallbackResponse.json();
+          if (fallbackResponse.ok) {
+            const fallbackResult = await fallbackResponse.json();
 
-          if (fallbackResult.data?.post) {
-            setPost(fallbackResult.data.post);
+            if (fallbackResult.data?.post) {
+              setPost(fallbackResult.data.post);
+            }
           }
-        } else {
-          console.error('Fallback request failed:', fallbackResponse.status);
         }
         setLoading(false);
       } catch (error) {

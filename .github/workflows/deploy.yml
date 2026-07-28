@@ -27,8 +27,19 @@ jobs:
           cache: npm
 
       - run: npm ci
+      
+      - name: Build TinaCMS
+        run: npm run tina:build
+        env:
+          VITE_TINA_CLIENT_ID: ${{ secrets.VITE_TINA_CLIENT_ID }}
+          TINA_TOKEN: ${{ secrets.TINA_TOKEN }}
+          TINA_SEARCH_TOKEN: ${{ secrets.TINA_SEARCH_TOKEN }}
 
-      - run: npm run build
+      - name: Build Vite App
+        run: npm run build
+        env:
+          VITE_TINA_CLIENT_ID: ${{ secrets.VITE_TINA_CLIENT_ID }}
+          VITE_TINA_URL: "https://content.tinajs.io/1.4/content/${{ secrets.VITE_TINA_CLIENT_ID }}/github/main"
 
       - uses: actions/upload-pages-artifact@v3
         with:
