@@ -33,6 +33,7 @@ function PostDetail() {
               query getPost($relativePath: String!) {
                 post(relativePath: $relativePath) {
                   title
+                  heroImage
                   body
                 }
               }
@@ -65,6 +66,7 @@ function PostDetail() {
                 query getPost($relativePath: String!) {
                   post(relativePath: $relativePath) {
                     title
+                    heroImage
                     body
                   }
                 }
@@ -110,6 +112,13 @@ function PostDetail() {
   return (
     <div className="post-detail-container">
       <Link to="/blog" className="back-link">← Back to Blog</Link>
+      
+      {post.heroImage && (
+        <div className="post-hero-image-container">
+          <img src={post.heroImage} alt={post.title} className="post-hero-image" />
+        </div>
+      )}
+
       <h1 className="post-title-detail">{post.title}</h1>
       <div className="post-content">
         {post.body ? <TinaMarkdown content={post.body} /> : <p>No content available.</p>}
