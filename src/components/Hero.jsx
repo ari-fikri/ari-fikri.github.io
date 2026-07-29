@@ -66,8 +66,7 @@ function Hero() {
               style={{ 
                 width: '100%', 
                 height: '100%', 
-                objectFit: 'contain', 
-                objectPosition: 'center',
+                objectFit: 'cover',
                 borderRadius: '24px' 
               }} 
             />
