@@ -21,7 +21,7 @@ function Blog() {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
-            'X-Tina-Token': import.meta.env.VITE_TINA_TOKEN,
+            'Authorization': `Bearer ${import.meta.env.VITE_TINA_TOKEN}`,
           },
           body: JSON.stringify({
             query: `
@@ -59,7 +59,7 @@ function Blog() {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
-              'X-Tina-Token': import.meta.env.VITE_TINA_TOKEN,
+              'Authorization': `Bearer ${import.meta.env.VITE_TINA_TOKEN}`,
             },
             body: JSON.stringify({
               query: `
