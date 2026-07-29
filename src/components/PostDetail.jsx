@@ -12,6 +12,11 @@ function PostDetail() {
       try {
         const isProd = import.meta.env.PROD;
         const tinaUrl = import.meta.env.VITE_TINA_URL || 'http://localhost:4001/graphql';
+        const tinaToken = import.meta.env.VITE_TINA_TOKEN;
+
+        if (isProd && !tinaToken) {
+          console.error('Tina CMS Error: VITE_TINA_TOKEN is not defined. Please check your GitHub Secrets and deployment configuration.');
+        }
 
         // In production, fetch directly from Tina Cloud URL
         // In development, try proxy first, then fallback to local URL
@@ -21,7 +26,7 @@ function PostDetail() {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
-            'Authorization': `Bearer ${import.meta.env.VITE_TINA_TOKEN}`,
+            ...(tinaToken ? { 'Authorization': `Bearer ${tinaToken}` } : {}),
           },
           body: JSON.stringify({
             query: `
@@ -53,7 +58,7 @@ function PostDetail() {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
-              'Authorization': `Bearer ${import.meta.env.VITE_TINA_TOKEN}`,
+              ...(tinaToken ? { 'Authorization': `Bearer ${tinaToken}` } : {}),
             },
             body: JSON.stringify({
               query: `
