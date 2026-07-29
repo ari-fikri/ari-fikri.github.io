@@ -42,6 +42,7 @@ a.nav-link {
   font-weight: 700;
   font-size: 1.25rem;
   color: #1a365d;
+  text-decoration: none;
 }
 
 .logo-initial {
