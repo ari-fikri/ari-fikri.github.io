@@ -507,6 +507,23 @@ h2.section-title {
   color: var(--text-secondary);
 }
 
+/* 404 Page */
+.not-found-page .hero-title {
+  background: linear-gradient(90deg, #60a5fa, #38bdf8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+@media (max-width: 768px) {
+  .not-found-page .hero-title {
+    font-size: 5rem !important;
+  }
+  .not-found-page .hero-subtitle {
+    font-size: 1.5rem !important;
+  }
+}
+
 /* Experience Timeline */
 .experience-timeline {
   display: flex;

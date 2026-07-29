@@ -6,6 +6,7 @@ import Navbar from './components/Navbar';
 import Home from './components/Home';
 import Blog from './components/Blog';
 import PostDetail from './components/PostDetail';
+import NotFound from './components/NotFound';
 import Footer from './components/Footer';
 
 function App() {
@@ -55,6 +56,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<PostDetail />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
 
         {/* Footer / Contact */}
