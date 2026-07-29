@@ -26,7 +26,10 @@ function Blog() {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
-            ...(tinaToken ? { 'Authorization': `Bearer ${tinaToken}` } : {}),
+            ...(tinaToken ? { 
+              'Authorization': `Bearer ${tinaToken}`,
+              'X-API-KEY': tinaToken 
+            } : {}),
           },
           body: JSON.stringify({
             query: `
@@ -64,7 +67,10 @@ function Blog() {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
-              ...(tinaToken ? { 'Authorization': `Bearer ${tinaToken}` } : {}),
+              ...(tinaToken ? { 
+                'Authorization': `Bearer ${tinaToken}`,
+                'X-API-KEY': tinaToken 
+              } : {}),
             },
             body: JSON.stringify({
               query: `
