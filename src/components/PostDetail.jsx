@@ -1,8 +1,12 @@
 import { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { TinaMarkdown } from 'tinacms/dist/rich-text';
+//import { TinaMarkdown } from 'tinacms/dist/rich-text';
 import Comments from './Comments.jsx';
 import SEO from './SEO.jsx';
+
+const TinaMarkdown = lazy(() => 
+  import('tinacms/dist/rich-text').then(module => ({ default: module.TinaMarkdown }))
+);
 
 function PostDetail() {
   const { slug } = useParams();
@@ -136,7 +140,9 @@ function PostDetail() {
 
       <h1 className="post-title-detail">{post.title}</h1>
       <div className="post-content">
-        {post.body ? <TinaMarkdown content={post.body} /> : <p>No content available.</p>}
+        <Suspense fallback={<div>Loading article content...</div>}>
+          {post.body ? <TinaMarkdown content={post.body} /> : <p>No content available.</p>}
+        </Suspense>
       </div>
        {/* Giscus Comments Widget */}
       <Comments />

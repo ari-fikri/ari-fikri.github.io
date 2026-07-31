@@ -29,14 +29,26 @@ export default defineConfig({
     },
   },
   build: {
-    rollupOptions: {
-      output: {
-        manualChunks: {
-          vendor: ['react', 'react-dom', 'react-router-dom', 'react-helmet-async'],
-          tina: ['tinacms', 'tinacms/dist/rich-text'],
+      rolldownOptions: {
+        output: {
+          codeSplitting: {
+            groups: [
+              {
+                name: 'vendor',
+                test: /node_modules[\\/](react|react-dom|react-router-dom|react-helmet-async)/,
+                priority: 20,
+              },
+              {
+                name: 'tina',
+                //test: /node_modules[\\/]tinacms/,
+                test: /node_modules[\\/]tinacms([\\/]|$)/, 
+                //maxSize: 500000, 
+                priority: 10,
+              },
+            ],
+          },
         },
       },
-    },
-    chunkSizeWarningLimit: 1000,
-  },
+      chunkSizeWarningLimit: 1200,
+    }
 })
