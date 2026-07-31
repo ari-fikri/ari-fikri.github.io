@@ -28,4 +28,15 @@ export default defineConfig({
       '@': '/src',
     },
   },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ['react', 'react-dom', 'react-router-dom', 'react-helmet-async'],
+          tina: ['tinacms', 'tinacms/dist/rich-text'],
+        },
+      },
+    },
+    chunkSizeWarningLimit: 1000,
+  },
 })
