@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { TinaMarkdown } from 'tinacms/dist/rich-text';
+import Comments from './Comments.jsx';
 
 function PostDetail() {
   const { slug } = useParams();
@@ -123,6 +124,8 @@ function PostDetail() {
       <div className="post-content">
         {post.body ? <TinaMarkdown content={post.body} /> : <p>No content available.</p>}
       </div>
+       {/* Giscus Comments Widget */}
+      <Comments />
     </div>
   );
 }
