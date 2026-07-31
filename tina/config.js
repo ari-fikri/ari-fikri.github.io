@@ -66,6 +66,44 @@ export default defineConfig({
             label: "Body",
             isBody: true,
           },
+         // --- SEO Meta Group ---
+          {
+            type: "object",
+            name: "seo",
+            label: "SEO Settings",
+            fields: [
+              {
+                type: "string",
+                name: "metaTitle",
+                label: "Meta Title",
+                ui: {
+                  description: "Ideal length: 50-60 characters",
+                },
+              },
+              {
+                type: "string",
+                name: "metaDescription",
+                label: "Meta Description",
+                ui: {
+                  component: "textarea",
+                  description: "Ideal length: 150-160 characters",
+                },
+              },
+              {
+                type: "image",
+                name: "shareImage",
+                label: "Open Graph (OG) Image",
+                ui: {
+                  description: "Recommended size: 1200x630 pixels",
+                },
+              },
+              {
+                type: "boolean",
+                name: "noIndex",
+                label: "Hide from Search Engines (noindex)",
+              },
+            ],
+          },
         ],
       },
     ],

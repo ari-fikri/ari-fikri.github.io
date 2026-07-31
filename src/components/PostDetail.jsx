@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { TinaMarkdown } from 'tinacms/dist/rich-text';
 import Comments from './Comments.jsx';
+import SEO from './SEO.jsx';
 
 function PostDetail() {
   const { slug } = useParams();
@@ -36,6 +37,12 @@ function PostDetail() {
                   title
                   heroImage
                   body
+                  seo {
+                    metaTitle
+                    metaDescription
+                    shareImage
+                    noIndex
+                  }
                 }
               }
             `,
@@ -69,6 +76,12 @@ function PostDetail() {
                     title
                     heroImage
                     body
+                    seo {
+                      metaTitle
+                      metaDescription
+                      shareImage
+                      noIndex
+                    }
                   }
                 }
               `,
@@ -112,6 +125,7 @@ function PostDetail() {
 
   return (
     <div className="post-detail-container">
+      <SEO seoData={post.seo} fallbackTitle={post.title} />
       <Link to="/blog" className="back-link">← Back to Blog</Link>
       
       {post.heroImage && (

@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import BgImg from '../assets/pp_bg.jpg';
 import AfLogo from '../assets/icons/af.svg';
+import SEO from './SEO.jsx';
 
 function Blog() {
   const [posts, setPosts] = useState([]);
@@ -110,6 +111,12 @@ function Blog() {
 
   return (
     <div className="blog-page">
+      <SEO 
+        fallbackTitle="Blog | Ari Fikri" 
+        seoData={{
+          metaDescription: "Insights, tutorials, and stories about digital transformation, technology leadership, and strategy by Ari Fikri."
+        }}
+      />
       <section 
         className="hero blog-hero" 
         style={{ 

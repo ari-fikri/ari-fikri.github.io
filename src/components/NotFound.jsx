@@ -1,9 +1,17 @@
 import { Link } from 'react-router-dom';
 import BgImg from '../assets/pp_bg.jpg';
+import SEO from './SEO.jsx';
 
 function NotFound() {
   return (
     <div className="not-found-page">
+      <SEO 
+        fallbackTitle="404 | Page Not Found" 
+        seoData={{
+          metaDescription: "The page you are looking for doesn't exist.",
+          noIndex: true
+        }}
+      />
       <section 
         className="hero not-found-hero" 
         style={{ 
