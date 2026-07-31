@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, lazy } from 'react';
 import { useParams, Link } from 'react-router-dom';
 //import { TinaMarkdown } from 'tinacms/dist/rich-text';
 import Comments from './Comments.jsx';
