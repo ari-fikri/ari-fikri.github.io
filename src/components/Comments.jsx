@@ -10,13 +10,6 @@ export default function Comments() {
         category="General"
         categoryId="DIC_kwDOTmAR5M4DCXDu"
         mapping="pathname" // Maps comments to the specific blog post URL
-        term="Welcome to my blog!"
-        reactionsEnabled="1"
-        emitMetadata="0"
-        inputPosition="top"
-        theme="light" // Can be "dark", "transparent_dark", etc.
-        lang="en"
-        loading="lazy"
       />
     </div>
   );

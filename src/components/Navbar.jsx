@@ -1,4 +1,4 @@
-import { Link, useLocation } from 'react-router-dom';
+import { useLocation } from 'next/router';
 
 function Navbar() {
   const location = useLocation();
@@ -12,13 +12,6 @@ function Navbar() {
         'event_label': 'Navbar Download Button'
       });
     }
-
-    const link = document.createElement('a');
-    link.href = '/cv_ari_fikri_project_mgr.pdf';
-    link.download = 'cv_ari_fikri_project_mgr.pdf';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
   };
 
   const handleNavLinkClick = (linkName) => {
@@ -31,33 +24,8 @@ function Navbar() {
   };
 
   return (
-    <nav className="navbar">
-      <div className="nav-container">
-        <Link to="/" className="nav-brand" onClick={() => handleNavLinkClick('Home')}>
-          <span className="logo-initial">AF</span>
-          <span className="logo-name">Ari R. Fikri</span>
-        </Link>
-        <div className="nav-links">
-          {isHomePage ? (
-            <>
-              <a href="#about" className="nav-link" onClick={() => handleNavLinkClick('About')}>About</a>
-              <a href="#expertise" className="nav-link" onClick={() => handleNavLinkClick('Expertise')}>Expertise</a>
-              <a href="#experience" className="nav-link" onClick={() => handleNavLinkClick('Experience')}>Experience</a>
-              <a href="#projects" className="nav-link" onClick={() => handleNavLinkClick('Projects')}>Projects</a>
-              <a href="#certifications" className="nav-link" onClick={() => handleNavLinkClick('Certifications')}>Certifications</a>
-              <a href="#contact" className="nav-link" onClick={() => handleNavLinkClick('Contact')}>Contact</a>
-            </>
-          ) : (
-            <>
-              <Link to="/#about" className="nav-link" onClick={() => handleNavLinkClick('About')}>About</Link>
-              <Link to="/#expertise" className="nav-link" onClick={() => handleNavLinkClick('Expertise')}>Expertise</Link>
-              <Link to="/#experience" className="nav-link" onClick={() => handleNavLinkClick('Experience')}>Experience</Link>
-            </>
-          )}
-          <Link to="/blog" className="nav-link" onClick={() => handleNavLinkClick('Blog')}>Blog</Link>
-          <button className="download-btn" onClick={handleDownload}>Download CV</button>
-        </div>
-      </div>
+    <nav>
+      {/* Your existing code here */}
     </nav>
   );
 }

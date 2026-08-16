@@ -1,54 +1,10 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
-import svgr from 'vite-plugin-svgr'
+import { defineConfig } from 'next/config';
 
-// https://vite.dev/config/
 export default defineConfig({
-  plugins: [
-    react(),
-    svgr({
-      include: "**/*.svg",
-    }),
-  ],
-  server: {
-    proxy: {
-      '/api': {
-        target: 'http://localhost:4001',
-        changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api/, '/graphql'),
-      },
-      '/admin': {
-        target: 'http://localhost:4001',
-        changeOrigin: true,
-      },
-    },
+  reactStrictMode: true,
+  swcMinify: true,
+  env: {
+    NEXT_PUBLIC_TINA_URL: process.env.NEXT_PUBLIC_TINA_URL,
+    NEXT_PUBLIC_TINA_TOKEN: process.env.NEXT_PUBLIC_TINA_TOKEN,
   },
-  resolve: {
-    alias: {
-      '@': '/src',
-    },
-  },
-  build: {
-      rolldownOptions: {
-        output: {
-          codeSplitting: {
-            groups: [
-              {
-                name: 'vendor',
-                test: /node_modules[\\/](react|react-dom|react-router-dom|react-helmet-async)/,
-                priority: 20,
-              },
-              {
-                name: 'tina',
-                //test: /node_modules[\\/]tinacms/,
-                test: /node_modules[\\/]tinacms([\\/]|$)/, 
-                //maxSize: 500000, 
-                priority: 10,
-              },
-            ],
-          },
-        },
-      },
-      chunkSizeWarningLimit: 1200,
-    }
-})
+});
