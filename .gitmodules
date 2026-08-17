@@ -1,0 +1,3 @@
+[submodule "cms-posts"]
+	path = cms-posts
+	url = git@github.com:ari-fikri/cms-posts.git
