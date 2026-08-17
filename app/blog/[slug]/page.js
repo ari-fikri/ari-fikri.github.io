@@ -1,57 +1,56 @@
-import fs from 'fs';
-import path from 'path';
-import matter from 'gray-matter';
-import { remark } from 'remark';
-import html from 'remark-html';
 import Link from 'next/link';
+import client from '../../../tina/__generated__/client';
+import { TinaMarkdown } from 'tinacms/dist/rich-text';
 
 export async function generateStaticParams() {
-  const postsDirectory = path.join(process.cwd(), 'content/posts');
-  const filenames = fs.readdirSync(postsDirectory);
+  const response = await client.queries.postConnection();
+  const edges = response.data.postConnection.edges || [];
 
-  return filenames.map((filename) => ({
-    slug: filename.replace(/\.md$/, ''),
+  return edges.map((edge) => ({
+    slug: edge.node._sys.filename,
   }));
 }
 
 export default async function PostPage({ params }) {
   const { slug } = await params;
-  const filePath = path.join(process.cwd(), 'content/posts', `${slug}.md`);
-  
-  if (!fs.existsSync(filePath)) {
+
+  try {
+    // 1. Fetch content from the separate repo via TinaCloud API
+    const response = await client.queries.post({
+      relativePath: `${slug}.md`,
+    });
+
+    const post = response.data.post;
+
+    return (
+      <article className="post-detail-container">
+        <Link href="/blog" className="back-link">
+          ← Back to Blog
+        </Link>
+        
+        {/* 2. Changed from data.heroImage to post.heroImage */}
+        {post.heroImage && (
+          <div className="post-hero-image-container">
+            <img 
+              src={post.heroImage} 
+              alt={post.title} 
+              className="post-hero-image"
+            />
+          </div>
+        )}
+
+        {/* 3. Changed from data.title to post.title */}
+        <h1 className="post-title post-title-detail">{post.title}</h1>
+        
+        {/* 4. Replaced dangerouslySetInnerHTML with TinaMarkdown */}
+        <div className="post-content">
+          <TinaMarkdown content={post.body} />
+        </div>
+      </article>
+    );
+  } catch (error) {
+    // Fallback if the file doesn't exist in the separate content repo
+    console.error("Error fetching post from TinaCloud:", error);
     return <div>Post not found</div>;
   }
-
-  const fileContent = fs.readFileSync(filePath, 'utf8');
-  const { data, content } = matter(fileContent);
-
-  const processedContent = await remark()
-    .use(html)
-    .process(content);
-  const contentHtml = processedContent.toString();
-
-  return (
-    <article className="post-detail-container">
-      <Link href="/blog" className="back-link">
-        ← Back to Blog
-      </Link>
-      
-      {data.heroImage && (
-        <div className="post-hero-image-container">
-          <img 
-            src={data.heroImage} 
-            alt={data.title} 
-            className="post-hero-image"
-          />
-        </div>
-      )}
-
-      <h1 className="post-title post-title-detail">{data.title}</h1>
-      
-      <div 
-        className="post-content"
-        dangerouslySetInnerHTML={{ __html: contentHtml }}
-      />
-    </article>
-  );
 }
