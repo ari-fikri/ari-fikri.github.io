@@ -42,7 +42,7 @@ export default async function PostPage({ params }) {
         {post.heroImage && (
           <div className="post-hero-image-container">
             <img 
-              src={post.heroImage} 
+              src={post.heroImage.startsWith('/') ? `/cms-posts${post.heroImage}` : post.heroImage} 
               alt={post.title} 
               className="post-hero-image"
             />

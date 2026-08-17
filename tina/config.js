@@ -29,8 +29,8 @@ export default defineConfig({
   // },
   media: {
     tina: {
-      mediaRoot: "",
-      publicFolder: "public",
+      mediaRoot: "public",
+      publicFolder: "cms-posts",
     },
   },
   // See docs on content modeling for more info on how to setup new content models: https://tina.io/docs/r/content-modelling-collections/

@@ -41,7 +41,10 @@ export default async function BlogPage() {
               <Link href={`/blog/${post.slug}`} key={post.slug} className="post-card">
                 <div className="post-card-image">
                   {post.heroImage ? (
-                    <img src={post.heroImage} alt={post.title} />
+                    <img 
+                      src={post.heroImage.startsWith('/') ? `/cms-posts${post.heroImage}` : post.heroImage} 
+                      alt={post.title} 
+                    />
                   ) : (
                     <div className="post-card-placeholder">
                       <div className="placeholder-logo">
