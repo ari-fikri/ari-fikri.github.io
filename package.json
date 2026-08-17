@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "tinacms dev -c \"next dev --webpack\"",
     "tina:dev": "tinacms dev -c \"next dev --webpack\"",
-    "build": "tinacms build && next build",
+    "build": "node --env-file=.env.local --max-old-space-size=4096 ./node_modules/.bin/tinacms build && next build --webpack",
     "tina:build": "tinacms build",
     "start": "next start",
     "lint": "oxlint"
