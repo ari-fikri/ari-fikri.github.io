@@ -1,5 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: 'export', // Forces Next.js to generate the "./out" directory
+  images: {
+    unoptimized: true, // Required for static exporting since Next.js image optimization needs a server
+  },
   webpack(config) {
     // Grab the existing rule that handles SVG imports
     const fileLoaderRule = config.module.rules.find((rule) =>
