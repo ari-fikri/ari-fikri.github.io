@@ -5,20 +5,14 @@ import client from '../../../tina/__generated__/client';
 import { TinaMarkdown } from 'tinacms/dist/rich-text';
 
 export async function generateStaticParams() {
-  const postsDirectory = path.join(process.cwd(), 'content/posts');
-  
-  if (!fs.existsSync(postsDirectory)) {
-    console.warn(`Warning: Posts directory not found at ${postsDirectory}`);
-    return [];
-  }
+  // Fetch all post metadata directly from Tina's database/API cache
+  const postsConnection = await client.queries.postConnection();
 
-  const filenames = fs.readdirSync(postsDirectory);
+  const edges = postsConnection.data?.postConnection?.edges || [];
 
-  return filenames
-    .filter((filename) => filename.endsWith('.md'))
-    .map((filename) => ({
-      slug: filename.replace(/\.md$/, ''),
-    }));
+  return edges.map((edge) => ({
+    slug: edge.node._sys.filename, // This gets the file name automatically without .md
+  }));
 }
 
 export default async function PostPage({ params }) {
