@@ -1,7 +1,9 @@
-import PersonIcon from '../assets/icons/person.svg';
-import MailIcon from '../assets/icons/mail.svg';
-import VerifiedIcon from '../assets/icons/verified.svg';
-import WhatsAppIcon from '../assets/icons/wa_white.svg';
+'use client';
+
+import PersonIcon from '../../public/assets/icons/person.svg';
+import MailIcon from '../../public/assets/icons/mail.svg';
+import VerifiedIcon from '../../public/assets/icons/verified.svg';
+import WhatsAppIcon from '../../public/assets/icons/wa_white.svg';
 
 function Footer() {
   const phoneNumber = '6289656666148';
@@ -11,7 +13,7 @@ function Footer() {
   };
 
   const handleWhatsAppClick = () => {
-    if (window.gtag) {
+    if (typeof window !== 'undefined' && window.gtag) {
       window.gtag('event', 'contact_whatsapp', {
         'event_category': 'Engagement',
         'event_label': 'Footer WhatsApp Button'
@@ -21,7 +23,7 @@ function Footer() {
   };
 
   const handleSocialClick = (platform) => {
-    if (window.gtag) {
+    if (typeof window !== 'undefined' && window.gtag) {
       window.gtag('event', 'social_click', {
         'event_category': 'Engagement',
         'event_label': platform

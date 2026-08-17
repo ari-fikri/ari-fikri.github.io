@@ -25,3 +25,5 @@ dist-ssr
 
 .env
 tina/__generated__
+.next/*
+.aider*

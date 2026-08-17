@@ -1,10 +1,12 @@
-import TrophyIcon from '../assets/icons/trophy.svg';
-import VerifiedIcon from '../assets/icons/verified.svg';
-import CodeIcon from '../assets/icons/code.svg';
-import GoogleIcon from '../assets/icons/google.svg';
-import PendoIcon from '../assets/icons/pendo.svg';
-import SimplilearnIcon from '../assets/icons/simplilearn.svg';
-import ScrumstudyIcon from '../assets/icons/scrumstudy.svg';
+'use client';
+
+import TrophyIcon from '../../public/assets/icons/trophy.svg';
+import VerifiedIcon from '../../public/assets/icons/verified.svg';
+import CodeIcon from '../../public/assets/icons/code.svg';
+import GoogleIcon from '../../public/assets/icons/google.svg';
+import PendoIcon from '../../public/assets/icons/pendo.svg';
+import SimplilearnIcon from '../../public/assets/icons/simplilearn.svg';
+import ScrumstudyIcon from '../../public/assets/icons/scrumstudy.svg';
 
 function BottomSection() {
   return (
@@ -12,7 +14,7 @@ function BottomSection() {
       <div className="section-container">
         <div className="bottom-grid">
           <div className="bottom-card certifications">
-            <h2 className="bottom-title">
+            <h2 className="bottom-title" style={{justifyContent:'center'}}>
               <span className="title-icon">
                 <VerifiedIcon style={{ width: '28px', height: '28px' }} />
               </span>
@@ -36,7 +38,13 @@ function BottomSection() {
                 }}
               >
                 <div className="cert-logo">
-                  <GoogleIcon style={{ width: '48px', height: '48px' }} />
+                  <img
+                    src="/assets/icons/google.svg"
+                    alt="Google Logo"
+                    style={
+                      { width: '48px', height: '48px', objectFit: 'contain' }
+                    }
+                  />
                 </div>
                 <div className="cert-info">
                   <h4 className="cert-name">Google Project Management Professional</h4>
@@ -60,7 +68,13 @@ function BottomSection() {
                 }}
               >
                 <div className="cert-logo">
-                  <ScrumstudyIcon style={{ width: '48px', height: '48px' }} />
+                  <img
+                    src="/assets/icons/scrumstudy.svg"
+                    alt="ScrumStudy Logo"
+                    style={
+                      { width: '48px', height: '48px', objectFit: 'contain' }
+                    }
+                  />
                 </div>
                 <div className="cert-info">
                   <h4 className="cert-name">Scrum Fundamentals Certified (SFC)</h4>
@@ -84,7 +98,13 @@ function BottomSection() {
                 }}
               >
                 <div className="cert-logo">
-                  <PendoIcon style={{ width: '48px', height: '48px' }} />
+                  <img
+                    src="/assets/icons/pendo.svg"
+                    alt="Pendo Logo"
+                    style={
+                      { width: '48px', height: '48px', objectFit: 'contain' }
+                    }
+                  />
                 </div>
                 <div className="cert-info">
                   <h4 className="cert-name">Product Management Basics Certification</h4>
@@ -108,7 +128,13 @@ function BottomSection() {
                 }}
               >
                 <div className="cert-logo">
-                  <SimplilearnIcon style={{ width: '48px', height: '48px' }} />
+                  <img
+                    src="/assets/icons/simplilearn.svg"
+                    alt="Simplilearn Logo"
+                    style={
+                      { width: '48px', height: '48px', objectFit: 'contain' }
+                    }
+                  />
                 </div>
                 <div className="cert-info">
                   <h4 className="cert-name">Agile Scrum Master</h4>
@@ -138,7 +164,7 @@ function BottomSection() {
           </div>
 
           <div className="bottom-card achievements">
-            <h2 className="bottom-title">
+            <h2 className="bottom-title" style={{justifyContent:'center'}} >
               <span className="title-icon">
                 <TrophyIcon style={{ width: '28px', height: '28px' }} />
               </span>
@@ -154,7 +180,7 @@ function BottomSection() {
           </div>
 
           <div className="bottom-card tools">
-            <h2 className="bottom-title">
+            <h2 className="bottom-title" style={{justifyContent:'center'}} >
               <span className="title-icon">
                 <span className="title-icon">
                   <CodeIcon style={{ width: '28px', height: '28px' }} />

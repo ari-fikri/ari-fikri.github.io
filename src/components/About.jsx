@@ -1,14 +1,16 @@
-import RocketIcon from '../assets/icons/rocket_24px.svg';
-import CycleIcon from '../assets/icons/cycle_24px.svg';
-import DeployedIcon from '../assets/icons/deployed_24px.svg';
-import ChartIcon from '../assets/icons/chart_24px.svg';
-import GroupsIcon from '../assets/icons/groups_24px.svg';
-import PersonIcon from '../assets/icons/person.svg';
-import LocationIcon from '../assets/icons/location.svg';
-import MailIcon from '../assets/icons/mail.svg';
-import StarIcon from '../assets/icons/star.svg';
-import LinkedinIcon from '../assets/icons/linkedin.svg';
-import GithubIcon from '../assets/icons/gh_logo.svg';
+'use client';
+
+import RocketIcon from '../../public/assets/icons/rocket_24px.svg';
+import CycleIcon from '../../public/assets/icons/cycle_24px.svg';
+import DeployedIcon from '../../public/assets/icons/deployed_24px.svg';
+import ChartIcon from '../../public/assets/icons/chart_24px.svg';
+import GroupsIcon from '../../public/assets/icons/groups_24px.svg';
+import PersonIcon from '../../public/assets/icons/person.svg';
+import LocationIcon from '../../public/assets/icons/location.svg';
+import MailIcon from '../../public/assets/icons/mail.svg';
+import StarIcon from '../../public/assets/icons/star.svg';
+import LinkedinIcon from '../../public/assets/icons/linkedin.svg';
+import GithubIcon from '../../public/assets/icons/gh_logo.svg';
 
 function About() {
   const handleSocialClick = (platform) => {

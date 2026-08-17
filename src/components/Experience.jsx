@@ -1,11 +1,13 @@
-import BusinessCenterIcon from '../assets/icons/business_center.svg';
-import TmminIcon from '../assets/icons/tmmin.svg';
-import UgmIcon from '../assets/icons/ugm.svg';
-import EvermosIcon from '../assets/icons/evermos.svg';
-import OvoIcon from '../assets/icons/ovo.svg';
-import RF123Icon from '../assets/icons/123rf.svg';
-import BizzyIcon from '../assets/icons/bizzy.svg';
-import WgsIcon from '../assets/icons/wgs.svg';
+'use client';
+
+import BusinessCenterIcon from '../../public/assets/icons/business_center.svg';
+import TmminIcon from '../../public/assets/icons/tmmin.svg';
+import UgmIcon from '../../public/assets/icons/ugm.svg';
+import EvermosIcon from '../../public/assets/icons/evermos.svg';
+import OvoIcon from '../../public/assets/icons/ovo.svg';
+import RF123Icon from '../../public/assets/icons/123rf.svg';
+import BizzyIcon from '../../public/assets/icons/bizzy.svg';
+import WgsIcon from '../../public//assets/icons/wgs.svg';
 
 function Experience() {
   return (
@@ -24,7 +26,13 @@ function Experience() {
             <div className="experience-card">
               <div className="company-header">
                 <div className="company-logo">
-                  <TmminIcon style={{ width: '112px', height: '112px' }} />
+                  <img 
+                    src="/assets/icons/tmmin.svg" 
+                    alt="TMMIN Logo" 
+                    style={
+                      { width: '112px', height: '112px', objectFit: 'contain' }
+                    } 
+                  />
                 </div>
                 <div className="company-info">
                   <h3 className="job-title">System Analyst (Digital Transformation)</h3>
@@ -46,7 +54,13 @@ function Experience() {
             <div className="experience-card">
               <div className="company-header">
                 <div className="company-logo">
-                  <UgmIcon style={{ width: '112px', height: '112px' }} />
+                  <img 
+                    src="/assets/icons/ugm.svg" 
+                    alt="UGM Logo" 
+                    style={
+                      { width: '112px', height: '112px', objectFit: 'contain' }
+                    } 
+                  />
                 </div>
                 <div className="company-info">
                   <h3 className="job-title">Data Analyst</h3>
@@ -67,7 +81,13 @@ function Experience() {
             <div className="experience-card">
               <div className="company-header">
                 <div className="company-logo">
-                  <EvermosIcon style={{ width: '112px', height: '112px' }} />
+                  <img
+                    src="/assets/icons/evermos.svg" 
+                    alt="Evermos Logo"
+                    style={
+                      { width: '112px', height: '112px', objectFit: 'contain' }
+                    }
+                  />
                 </div>
                 <div className="company-info">
                   <h3 className="job-title">Engineering Manager</h3>
@@ -88,7 +108,13 @@ function Experience() {
             <div className="experience-card">
               <div className="company-header">
                 <div className="company-logo">
-                  <BizzyIcon style={{ width: '112px', height: '112px' }} />
+                  <img
+                    src="/assets/icons/123rf.svg"
+                    alt="123RF Logo"
+                    style={
+                      { width: '112px', height: '112px', objectFit: 'contain' }
+                    }
+                  />
                 </div>
                 <div className="company-info">
                   <h3 className="job-title">Head of Product</h3>
@@ -109,7 +135,13 @@ function Experience() {
             <div className="experience-card">
               <div className="company-header">
                 <div className="company-logo">
-                  <OvoIcon style={{ width: '112px', height: '112px' }} />
+                  <img 
+                    src="/assets/icons/ovo.svg" 
+                    alt="Ovo Logo" 
+                    style={
+                      { width: '112px', height: '112px', objectFit: 'contain' }
+                    } 
+                  />
                 </div>
                 <div className="company-info">
                   <h3 className="job-title">Scrum Master / Product Owner</h3>
@@ -130,7 +162,13 @@ function Experience() {
             <div className="experience-card">
               <div className="company-header">
                 <div className="company-logo">
-                  <RF123Icon style={{ width: '112px', height: '112px' }} />
+                  <img 
+                    src="/assets/icons/123rf.svg" 
+                    alt="123RF Logo" 
+                    style={
+                      { width: '112px', height: '112px', objectFit: 'contain' }
+                    } 
+                  />
                 </div>
                 <div className="company-info">
                   <h3 className="job-title">Project Manager</h3>
@@ -152,7 +190,13 @@ function Experience() {
             <div className="experience-card">
               <div className="company-header">
                 <div className="company-logo">
-                  <WgsIcon style={{ width: '112px', height: '112px' }} />
+                    <img 
+                      src="/assets/icons/wgs.svg" 
+                      alt="WGS Logo" 
+                      style={
+                      { width: '112px', height: '112px', objectFit: 'contain' }
+                    } 
+                  />
                 </div>
                 <div className="company-info">
                   <h3 className="job-title">Mobile Apps & Web Development Project Manager</h3>

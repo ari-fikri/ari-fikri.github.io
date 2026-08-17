@@ -1,16 +1,18 @@
-import CalendarIcon from '../assets/icons/chart_24px.svg';
-import GroupsIcon from '../assets/icons/groups_24px.svg';
-import RocketIcon from '../assets/icons/rocket_24px.svg';
-import PersonIcon from '../assets/icons/person.svg';
-import HeroImg from '../assets/hero.png'
-import BgImg from '../assets/pp_bg.jpg'
+'use client';
+
+import CalendarIcon from '../../public/assets/icons/chart_24px.svg';
+import GroupsIcon from '../../public/assets/icons/groups_24px.svg';
+import RocketIcon from '../../public/assets/icons/rocket_24px.svg';
+import PersonIcon from '../../public/assets/icons/person.svg';
+import HeroImg from '../../public/assets/hero.png'
+import BgImg from '../../public/assets/pp_bg.jpg'
 
 function Hero() {
   return (
     <section 
       className="hero" 
       style={{ 
-        backgroundImage: `linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.8)), url(${BgImg})`,
+        backgroundImage: `linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.8)), url(${BgImg.src})`,
         backgroundSize: 'cover',
         backgroundPosition: 'right',
         backgroundAttachment: 'fixed'
@@ -61,7 +63,7 @@ function Hero() {
         <div className="hero-image">
           <div className="image-placeholder">
             <img 
-              src={HeroImg} 
+              src={HeroImg.src} 
               alt="Ari R Fikri" 
               style={{ 
                 width: '100%', 
