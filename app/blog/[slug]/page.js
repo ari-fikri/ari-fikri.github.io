@@ -5,7 +5,7 @@ import client from '../../../tina/__generated__/client';
 import { TinaMarkdown } from 'tinacms/dist/rich-text';
 
 export async function generateStaticParams() {
-  const postsDirectory = path.join(process.cwd(), 'cms-posts/content/posts');
+  const postsDirectory = path.join(process.cwd(), 'content/posts');
   
   if (!fs.existsSync(postsDirectory)) {
     console.warn(`Warning: Posts directory not found at ${postsDirectory}`);
