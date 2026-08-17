@@ -31,7 +31,7 @@ jobs:
       - name: Build TinaCMS
         run: npm run tina:build
         env:
-          VITE_TINA_CLIENT_ID: ${{ secrets.VITE_TINA_CLIENT_ID }}
+          VITE_TINA_CLIENT_ID: ${{ secrets.NEXT_PUBLIC_TINA_CLIENT_ID }}
           TINA_TOKEN: ${{ secrets.TINA_TOKEN }}
           TINA_SEARCH_TOKEN: ${{ secrets.TINA_SEARCH_TOKEN }}
           GITHUB_BRANCH: ${{ github.ref_name }}
@@ -39,9 +39,9 @@ jobs:
       - name: Build Vite App
         run: npm run build
         env:
-          VITE_TINA_CLIENT_ID: ${{ secrets.VITE_TINA_CLIENT_ID }}
+          VITE_TINA_CLIENT_ID: ${{ secrets.NEXT_PUBLIC_TINA_CLIENT_ID }}
           VITE_TINA_TOKEN: ${{ secrets.TINA_TOKEN }}
-          VITE_TINA_URL: "https://content.tinajs.io/1.4/content/${{ secrets.VITE_TINA_CLIENT_ID }}/github/${{ github.ref_name }}"
+          VITE_TINA_URL: "https://content.tinajs.io/1.4/content/${{ secrets.NEXT_PUBLIC_TINA_CLIENT_ID }}/github/${{ github.ref_name }}"
 
       - uses: actions/upload-pages-artifact@v3
         with:
