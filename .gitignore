@@ -27,3 +27,6 @@ dist-ssr
 tina/__generated__
 .next/*
 .aider*
+
+sitemap.xml
+public/sitemap.xml
