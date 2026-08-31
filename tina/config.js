@@ -42,6 +42,13 @@ export default defineConfig({
         path: "content/posts",
         fields: [
           {
+            name: "draft",
+            label: "Draft",
+            type: "boolean",
+            required: true,
+            description:"when checked, this post will not be visible in the published article list"
+          },
+          {
             type: "string",
             name: "title",
             label: "Title",

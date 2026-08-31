@@ -1,4 +1,5 @@
 ---
+draft: false
 title: AWS Cloud Platform - Memory Palace
 heroImage: /AWS-City-Memory-Palace.png
 excerpt: I created this AWS Memory Palace in order to remember what AWS services are and what those are for.
@@ -29,10 +30,10 @@ So here are the AWS Services are:
 
 ## **Storage District**
 
-1. **S3 **(Simple Storage Service) : is a fully managed object storage service with \*\*99.999999999% durability\*\*. It can store any type of file up to 5 TB per object, with virtually unlimited total capacity.
+1. \*\*S3 \*\*(Simple Storage Service) : is a fully managed object storage service with \*\*99.999999999% durability\*\*. It can store any type of file up to 5 TB per object, with virtually unlimited total capacity.
 2. **EFS** Elastic File System : is a fully managed, scalable file storage service using the NFS protocol. It automatically scales to petabytes and allows multiple EC2 instances to access the same file system simultaneously.
 3. **Instance Store**: s block-level storage physically attached to the EC2 instance host computer. Data persists during reboots but is lost when the instance is stopped or terminated.
-4. **EBS (**Elastic Block Store) : provides persistent block-level storage volumes for EC2 instances. Unlike instance stores, EBS data persists even when the instance is stopped or terminated.
+4. \*\*EBS (\*\*Elastic Block Store) : provides persistent block-level storage volumes for EC2 instances. Unlike instance stores, EBS data persists even when the instance is stopped or terminated.
 
 ## **Monitoring District**
 

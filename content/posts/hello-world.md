@@ -1,8 +1,10 @@
 ---
+draft: true
 title: Hello World
 heroImage: /hello-world.png
 excerpt: 'Finally I am able to use TinaCMS as CMS for my personal Blog. TinaCMS is a headless CMS, so it doesn''t really have a database as all contents are store in Github.'
 ---
+Yippie 
 
 Finally I am able to use TinaCMS as CMS for my personal Blog. TinaCMS is a headless CMS, so it doesn't really have a database as all contents are store in Github.
 

@@ -6,8 +6,14 @@ import AfLogo from '../../public/assets/icons/af.svg';
 
 export default async function BlogPage() {
   try {
+    const isProd = process.env.NODE_ENV === "production";
+
     // 1. Fetch all posts from the separate content repo using the Connection query
-    const response = await client.queries.postConnection();
+    //const response = await client.queries.postConnection();
+    // Fetching happens directly inside the server component
+    const response = await client.queries.postConnection({
+      filter: { draft: { eq: false } }
+    });
     
     // 2. Map through the edges to extract the node data and system filename as the slug
     const posts = response.data.postConnection.edges?.map((edge) => {
