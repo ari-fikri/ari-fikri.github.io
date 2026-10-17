@@ -1,9 +1,9 @@
 [build]
-  command = "git submodule update --init --recursive && npm run build"
+  command = "git submodule update --init --recursive && npm rebuild && npm run build"
   publish = "out"
 
 [build.environment]
-  NODE_VERSION = "23"
+  NODE_VERSION = "22"
   NODE_OPTIONS = "--max-old-space-size=4096"
   SECRETS_SCAN_OMIT_PATHS = ".netlify/.next"
   SECRETS_SCAN_ENABLED = "false"
