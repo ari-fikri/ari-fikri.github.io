@@ -1,5 +1,4 @@
 ---
-draft: false
 title: Zero cost Website
 heroImage: /0_cost.png
 excerpt: How to create your own website with 0 rupiah/dollar investment

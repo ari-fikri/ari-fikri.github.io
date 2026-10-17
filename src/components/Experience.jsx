@@ -19,6 +19,7 @@ function Experience() {
           </span>
           Professional Experience
         </h2>
+        {/* BEGIN -- TMMIN Experience Section   */}
         <div className="experience-timeline">
           <div className="experience-item">
             <div className="experience-date">2022 - Present</div>
@@ -47,7 +48,9 @@ function Experience() {
               </div>
             </div>
           </div>
+          {/* END -- TMMIN Experience Section   */}
 
+          {/* BEGIN -- UGM Experience Section   */}
           <div className="experience-item">
             <div className="experience-date">May 2024 - Dec 2024</div>
             <div className="experience-dot"></div>
@@ -74,7 +77,9 @@ function Experience() {
               </div>
             </div>
           </div>
+          {/* END -- UGM Experience Section   */}
 
+          {/* BEGIN -- Evermos Experience Section   */}
           <div className="experience-item">
             <div className="experience-date">Dec 2021 - May 2024</div>
             <div className="experience-dot"></div>
@@ -101,7 +106,9 @@ function Experience() {
               </div>
             </div>
           </div>
+          {/* END -- Evermos Experience Section   */}
 
+          {/* BEGIN -- 123rf Experience Section   */}
           <div className="experience-item">
             <div className="experience-date">Aug 2019 - May 2020</div>
             <div className="experience-dot"></div>
@@ -128,7 +135,9 @@ function Experience() {
               </div>
             </div>
           </div>
+          {/* END -- 123rf Experience Section   */}
 
+          {/* BEGIN -- OVO Experience Section   */}
           <div className="experience-item">
             <div className="experience-date">Mar 2016 - May 2018</div>
             <div className="experience-dot"></div>
@@ -155,7 +164,9 @@ function Experience() {
               </div>
             </div>
           </div>
+          {/* END -- OVO Experience Section   */}
 
+          {/* BEGIN -- Bizzy Indonesia Experience Section   */}
           <div className="experience-item">
             <div className="experience-date">Feb 2015 - Jan 2016</div>
             <div className="experience-dot"></div>
@@ -163,8 +174,8 @@ function Experience() {
               <div className="company-header">
                 <div className="company-logo">
                   <img 
-                    src="/assets/icons/123rf.svg" 
-                    alt="123RF Logo" 
+                    src="/assets/icons/bizzy.svg" 
+                    alt="Bizzy Logo" 
                     style={
                       { width: '112px', height: '112px', objectFit: 'contain' }
                     } 
@@ -183,7 +194,9 @@ function Experience() {
 
             </div>
           </div>
+          {/* END -- Bizzy Indonesia Experience Section   */}
 
+          {/* BEGIN -- Walden Global Services Experience Section   */}
           <div className="experience-item">
             <div className="experience-date">Feb 2010 - Dec 2012</div>
             <div className="experience-dot"></div>
@@ -210,6 +223,8 @@ function Experience() {
               </div>
             </div>
           </div>
+          {/* END -- Walden Global Services Experience Section   */}
+
         </div>
         <div className="view-more-container">
           <button 

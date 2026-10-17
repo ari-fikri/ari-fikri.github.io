@@ -30,3 +30,9 @@ tina/__generated__
 
 sitemap.xml
 public/sitemap.xml
+
+# Build outputs
+dist
+dist-ssr
+out
+.next
