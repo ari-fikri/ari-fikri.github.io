@@ -3,7 +3,7 @@
   publish = "out"
 
 [build.environment]
-  NODE_VERSION = "22"
+  NODE_VERSION = "23"
   NODE_OPTIONS = "--max-old-space-size=4096"
   SECRETS_SCAN_OMIT_PATHS = ".netlify/.next"
   SECRETS_SCAN_ENABLED = "false"
@@ -13,6 +13,3 @@
   from = "/admin/*"
   to = "/admin/index.html"
   status = 200
-
-[build.environment]
-  NODE_VERSION = "23"
